@@ -37,9 +37,9 @@ const Home = () => {
                 (recipe.length > 0)
                  && (
                         <div>
-                             {recipe.map((recipe,index) => (
-                               <div>
-                                  <RecipeCard recipe={recipe} key={index}/>
+                             {recipe.map((osman,index) => (
+                               <div key={index}>
+                                  <RecipeCard recipe={osman}/>
                                 </div>
                             ))}
                         </div>

@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 const RecipeCard = ({recipe}) => {
-    
+  console.log(recipe)
         return (
         <div>
             <Card sx={{ maxWidth: 345 }}>
@@ -18,7 +18,7 @@ const RecipeCard = ({recipe}) => {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  <h1>{recipe.recipe.label}</h1>
+                  <p>{recipe.recipe.label}</p>
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -32,8 +32,7 @@ const RecipeCard = ({recipe}) => {
               </Button>
             </CardActions>
           </Card>
-                {recipe.recipe.label}
-                <p>{recipe[0].recipe.calories}</p>
+                
             </div>
         )
 }
