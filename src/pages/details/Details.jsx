@@ -1,21 +1,23 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import {DetailContainer, HeaderContainer,OtherPart,DetailPart,ImgContainer,IngredContainer} from "./DetailsStyles"
-import dietSvg from "../../assets/diet.svg"
-
+import { DetailContainer, DetailPart, HeaderContainer, ImgContainer, IngredContainer, OtherPart } from './DetailsStyles';
+import dietSvg from "../../assets/diet.svg";
 const Details = () => {
-  const location = useLocation();
-  const recipe = location.state.recipe1
-  // console.log(recipe);
+const location=useLocation();
+
+ const recipe=   location.state.recipe1
+
+  console.log(recipe);
+
   return (
     <DetailContainer>
       <HeaderContainer>
-        <h1>{recipe.label}</h1>
-        <img src="{dietSvg}" alt="" />
+        <h1> {recipe.label}</h1>
+        <img src={dietSvg} alt="" />
       </HeaderContainer>
       <DetailPart>
-        <OtherPart> 
-        <>Nutrients</>
+        <OtherPart>
+          <>Nutrients</>
           <p>
             {recipe.totalNutrients.CA.label} :
             {Math.round(recipe.totalNutrients.CA.quantity)}
@@ -39,26 +41,27 @@ const Details = () => {
           <p>{recipe.totalWeight}</p>
           <p>Calories: {Math.round(recipe.calories)}</p>
           {recipe.digest.slice(0, 4).map((item, index) => (
-            <div key={index}>
             <p key={index}>
               {item.label} : {Math.round(item.total)}
             </p>
-            </div>
           ))}
-
         </OtherPart>
         <ImgContainer>
-        <img src="{recipe.image}" alt="{recipe.label}" />
+          <img src={recipe.image} alt={recipe.label} />
         </ImgContainer>
-        <IngredContainer>
-          {recipe.ingredientLines.map((product,index)=>(
-            <p>{index+1}*{product}</p>
-          ))}
 
+        <IngredContainer>
+          {recipe.ingredientLines.map((malzeme, index) => (
+            <div key={index}>
+              <p>
+               {index + 1} * {malzeme}
+              </p>
+            </div>
+          ))}
         </IngredContainer>
       </DetailPart>
     </DetailContainer>
-  )
+  );
 }
 
 export default Details

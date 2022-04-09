@@ -1,9 +1,12 @@
 
 import React from 'react'
+import { LoginContainer } from './LoginStyles'
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <LoginContainer>
+      
+    </LoginContainer>
   )
 }
 
