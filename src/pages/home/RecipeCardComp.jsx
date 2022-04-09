@@ -1,8 +1,16 @@
 import React from 'react'
+import {RecipeCard,RecipeHeader, RecipeImage} from "./HomeStyles"
 
-const RecipeCardComp = () => {
+const RecipeCardComp = ({recipe1}) => {
   return (
-    <div>RecipeCardComp</div>
+    <RecipeCard>
+      <RecipeHeader>
+        {recipe1.label}
+      </RecipeHeader>
+      <RecipeImage src={recipe1.image}/>
+
+      <Button></Button>
+    </RecipeCard>
   )
 }
 

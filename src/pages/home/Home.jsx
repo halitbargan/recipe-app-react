@@ -1,10 +1,13 @@
 import React,{useState} from 'react'
 import Header from "../../components/header/Header"
 import axios from "axios"
+import { MainContainer,ImgDiv,HomeImg } from './HomeStyles'
+import homeSvg from "../../assets/home.svg"
+import RecipeCardComp from "./RecipeCardComp"
 
 
 const APP_ID="bc371d7b"
-const APP_KEY= "e020d4b08e7270a850c28fb6ca8b3fba"
+const APP_KEY= "223850f31659310a7ffc44e2576504ec	"
 
 const Home = () => {
   const [query, setQuery] = useState("")
@@ -31,7 +34,17 @@ const Home = () => {
       mealTypes={mealTypes}
       setMeal={setMeal}/>
 
+{food? (<MainContainer>
+  {food.map((liste,index)=>(
+    <RecipeCardComp key={index} recipe1={liste.recipe}/>
+    ))}
+  
+      </MainContainer>):<ImgDiv>
+      <HomeImg src="{homeSvg}"/>
+      </ImgDiv>}
+
     </div>
+    
   )
 }
 
