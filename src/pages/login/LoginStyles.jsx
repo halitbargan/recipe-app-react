@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 export const LoginContainer = styled.div`
@@ -67,7 +66,6 @@ export const StyledButton = styled.button`
 
 export const StyledImg = styled.img`
   /* yuvarlağın içindeki üstteki küçük resim */
-
   width: 150px;
   margin: 1rem;
 `;
